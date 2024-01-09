@@ -33,5 +33,5 @@ terraform show
 
   ```terraform state list``` — Lists out all the resources that are tracked in the current state file.
 
-
+- We can create the other configuration file such as variable.tf , output.tf , provider.tf, main.tf and terraform.tf etc.
   
