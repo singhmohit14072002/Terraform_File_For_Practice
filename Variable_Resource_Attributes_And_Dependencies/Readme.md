@@ -33,3 +33,16 @@ Strings, numbers, and bools are sometimes called primitive types. Lists/tuples a
 - null: a value that represents absence or omission. If you set an argument of a resource to null, Terraform behaves as though you had completely omitted it — it will use the argument's default value if it has one, or raise an error if the argument is mandatory. null is most useful in conditional expressions, so you can dynamically omit an argument if a condition isn't met.
 
 
+#### Resource vs data Source
+```
+keyword: resource 
+in resource we can create , update, destroy infrastructure and also called managed resources
+
+```
+
+```
+keyword: data
+only Reads infrastructure also called Data Resources.
+
+```
+
