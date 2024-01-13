@@ -1,0 +1,11 @@
+- When the resources created very first time after running the terraform apply command, a state
+file is created, and by default within the same directory containing the configuration files. 
+This is called terraform.tfstate is the state file.
+
+- By default terraform also create a backup of this file called terraform.tfstate.backup. 
+- The state file is adjacent data structure that contains the complete record if the infrastructure created by terraform.
+- terraform apply -refresh=false  when we do this terraform will no longer update  the state file to keep it indync with the actual resource.  (this is not recommended)
+- terraform uses the state file as blue  file in real world .
+- The state file also keep track of dependencies between the resources.
+- Terraform state file contains all information related to the infrastructure like variables that we have already used within the configuration files or the attributes such as SSH keys and initial passwords. Since state file store in locally such as plain text by defult anyone can see that.
+So as reult we need to make sure that the state file is stored in secure remote backeds. for this we can use Amazon S3 or Terraform Cloud to save the state file. And version controle systems used for only to store the configuration files that do not control any sensitive data. 
