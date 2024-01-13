@@ -9,3 +9,8 @@ This is called terraform.tfstate is the state file.
 - The state file also keep track of dependencies between the resources.
 - Terraform state file contains all information related to the infrastructure like variables that we have already used within the configuration files or the attributes such as SSH keys and initial passwords. Since state file store in locally such as plain text by defult anyone can see that.
 So as reult we need to make sure that the state file is stored in secure remote backeds. for this we can use Amazon S3 or Terraform Cloud to save the state file. And version controle systems used for only to store the configuration files that do not control any sensitive data. 
+
+
+#### Remote State 
+
+-  State Locking -> is a very  important feature  called state locking ans it ensures that th e state file dies not get corrupted by multiple operation trying to update it all the same time. 
