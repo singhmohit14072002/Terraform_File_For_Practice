@@ -1,0 +1,109 @@
+```
+terraform validate
+
+```
+- The terraform validate command is used in Terraform to check the syntax and validity of the Terraform configuration files in your project without actually creating any infrastructure. It ensures that the configuration files follow the correct syntax, resource types, and other conventions.
+
+
+- The terraform fmt command is used in Terraform to automatically format your Terraform code according to a consistent style defined by HashiCorp. This command helps ensure that the code in your Terraform configuration files is consistently formatted, making it more readable and maintainable.
+````
+terraform fmt
+````
+When you run this command, Terraform will format the Terraform files in the current directory and its subdirectories. The command updates the files in place, modifying their formatting to comply with the standard style.
+
+It's a good practice to run terraform fmt before committing changes to version control or sharing your code with others. Consistent formatting helps maintain a clean and standardized codebase across teams and makes it easier for everyone to collaborate on Terraform projects.
+
+
+- 
+The terraform show command is used to display the current state or configuration of your Terraform-managed infrastructure. It provides a human-readable representation of the Terraform state or the execution plan, depending on how it's used.
+``````
+terraform show
+``````
+This command displays the current state of your infrastructure as stored in the Terraform state file. It provides information about the resources that Terraform has created, their attributes, and any dependencies.
+Also we can ``` terraform show -json ``` use this command command to print the information in json formate.
+
+- 
+The terraform providers command is used to display information about the providers used in your Terraform configuration. Providers in Terraform are plugins that allow Terraform to interact with various infrastructure platforms and services (e.g., AWS, Azure, Google Cloud).
+
+```
+terraform providers
+```
+When you run this command in the directory containing your Terraform configuration files, it will display a list of the providers that your configuration references, along with their versions and the corresponding provider type. The output will look something like:
+
+``` 
+Providers required by configuration:
+.
+├── provider[registry.terraform.io/hashicorp/aws]
+└── provider[registry.terraform.io/hashicorp/null]
+
+Terraform has been successfully initialized!
+
+```
+
+In this example, the configuration requires the AWS provider and the Null provider. Each provider is specified by its source (registry) and the provider type.
+
+This command is useful for quickly checking which providers your Terraform configuration depends on, and it's often used during the initialization phase of a Terraform project to ensure that all required providers are available and configured.
+
+- The terraform output command is used to view the output values defined in your Terraform configuration. Outputs in Terraform allow you to define values that are useful to interact with or obtain information from the infrastructure you've provisioned.
+```
+terraform output
+```
+Basically if you  want to print out all the output variables used by the configuration use the command terraform output.
+
+- The terraform refresh command is used to reconcile the Terraform state with the real-world infrastructure. When you run this command, Terraform queries the actual infrastructure and updates its state file to reflect the current state of those resources. It does not modify the infrastructure but updates the state file to accurately represent the existing state. 
+``` 
+terraform refresh 
+```
+This command is useful in situations where the state file may have become out of sync with the actual infrastructure due to external changes. Running terraform refresh helps Terraform to refresh its understanding of the current state.
+
+It's worth noting that in most cases, Terraform automatically performs a refresh as part of other operations such as terraform apply. However, running terraform refresh explicitly can be useful in scenarios where you want to sync the state without making any changes to the infrastructure.
+
+After running terraform refresh, you can review the refreshed state by using commands like terraform show or terraform output to ensure that your Terraform state accurately reflects the current state of the infrastructure.
+
+- The terraform graph command in Terraform generates a visual representation of the Terraform resources and their dependencies in your configuration. The output is in the DOT format, which is a plain text graph description language. You can use tools like Graphviz to render the DOT file into a graphical representation.
+```
+terraform graph > graph.dot
+```
+This command can be runa s soon as you have a configuration file ready even before you have intialized.
+
+#### Terraform command releate to terraform state 
+
+- 
+The terraform state show command in Terraform is used to display detailed information about a specific resource managed by Terraform. When using this command, you need to provide the resource identifier as an argument. Here's an example using an AWS S3 bucket resource:
+
+``` 
+terraform state show aws_s3_bucket.finance
+```
+- The terraform state list command is used to list all resources in the Terraform state. This command can be handy when you want to see a summary of the resources that Terraform is managing.
+
+ ```
+ terraform state list 
+ ```
+ we can also pass the resource matching command to show the resources
+ ```
+ terraform state list aws_s3_bucket_cerberus-finance
+ ```
+
+- This command is to move the items in terraform state file or to move items from one state file to another state file in a different configuration directory.
+```
+terraform state mv [source] [destination]
+``` 
+
+- The terraform state pull command is used to manually pull the current state from a remote backend and store it in a local file. This command is typically not required in normal Terraform workflows because Terraform automatically manages the state as part of its operations. However, it can be useful in scenarios where you want to retrieve and inspect the current state directly.
+```
+terrafrom state pull > terraform.tfstate
+```
+This command pulls the latest state from the configured remote backend and writes it to a local file named terraform.tfstate. You can replace terraform.tfstate with the desired filename.
+
+- ```  terraform state rm  <resource address> ``` command is used to delete the items from the terraform state file. Thia commad is used when you no longer wish to manage one or more resources where are the current terraform configuration and state
+The resource are not destroy by this command only removed from the terraform management. 
+
+- ``` terrafrom state push ./terrafrom.tfstate ``` command can be used to override the remote state with a local file. 
+
+- ```  ```
+
+
+
+
+
+
