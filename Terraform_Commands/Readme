@@ -100,7 +100,7 @@ The resource are not destroy by this command only removed from the terraform man
 
 - ``` terrafrom state push ./terrafrom.tfstate ``` command can be used to override the remote state with a local file. 
 
-- ```  ```
+
 
 
 
