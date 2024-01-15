@@ -100,8 +100,28 @@ The resource are not destroy by this command only removed from the terraform man
 
 - ``` terrafrom state push ./terrafrom.tfstate ``` command can be used to override the remote state with a local file. 
 
+- ``` terraform taint ```  The terraform taint command is used to mark a resource as tainted. In Terraform, a tainted resource is one that Terraform considers as needing to be recreated during the next terraform apply. Marking a resource as tainted forces Terraform to destroy and recreate that resource, updating its state and the actual infrastructure.
+
+The terraform taint and ``` terraform untaint ``` commands are typically used in scenarios where manual intervention is needed to ensure certain resources are recreated with updated configurations.
+
+- How to enable and use debugging in terraform. When things go wrong  in terraform the obvious place to look for the cause is in the logs. Although terraform apply often provides a good indiction of what may have caused in error during the provisioning. There may be cases where we need to look a littlebit deeper to do  this we can make use of environment variable called tf_log and set it to one of the log level valuees terraform offers file log levels info , warning ,error ,debug entries wit trace being the most robust logging level of them all. ``` export TF_LOG=TRACE ```
+
+- To store  the logs persistently in a  file use  the environment variable called ``` export TF_LOG_PATH=/tmp/terraform.log ``` and point to a file like this. This will ensure that all th elogs that are generated are recorded in that file.
+
+- To disable logging completely ``` unset TF_LOG_PATH ``` .
 
 
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
