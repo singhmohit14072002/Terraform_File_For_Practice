@@ -110,6 +110,20 @@ The terraform taint and ``` terraform untaint ``` commands are typically used in
 
 - To disable logging completely ``` unset TF_LOG_PATH ``` .
 
+- terraform import command is not update the configuration file it ony imports resources into the state file.
+
+#### Terraform Workspace
+- If you want to make use of the same cofiguration fies to create similar resources for say a production envrionment we can make use of workspaces. With workspaces we can use the same configuration directory to create multiple infrastructure environment suchas the development and productuin environments. A workspace called default is automatically created within every terraform configuration.
+
+To create the new workspces we can make  use of the new subcommand followed by the name of the name of the workspace
+- terraform workspce new production or development 
+- ` terraform console ` command tells in which environment we have 
+- ` terraform workspace select production `  this command is use to switch the environment of the workspace in terraform 
+
+- When we are making use of workspaces with local state instead of using the terraform.tf state file in the configuration directory terraform stores the state files inside a separate directory called terraform.tfstate.D. Inside this directory we can see adirectory by the name of each workspace for which we have completed at least one terraform.
+
+
+
 
 
 
