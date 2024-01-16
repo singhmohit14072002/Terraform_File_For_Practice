@@ -1,6 +1,6 @@
 resource "aws_instance" "db" {
     ami = var.db_ami
-    instance_type = var..web_instance_type
+    instance_type = var.web_instance_type
 }
 
 resource "aws_instance" "web" {
