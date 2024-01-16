@@ -14,3 +14,11 @@ variable length {
     type = number
     description = "The lenght of the password"
 }
+
+
+### This is for dynamic block 
+
+variable "ingress_ports" {
+    type = list
+    default = [22,8080]
+}
