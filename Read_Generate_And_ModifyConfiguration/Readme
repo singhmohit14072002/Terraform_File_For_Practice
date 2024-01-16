@@ -1,0 +1,1 @@
+- To create multiple instance using the same resource block we can make use of meta-arguments, such as count and for_each.
