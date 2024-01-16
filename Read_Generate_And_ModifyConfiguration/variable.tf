@@ -8,3 +8,9 @@ variable "webservers" {
     type = set
     default = ["web1","web2","web3"]
 }
+
+## this is for random password gerator varibale.tf 
+variable length {
+    type = number
+    description = "The lenght of the password"
+}
