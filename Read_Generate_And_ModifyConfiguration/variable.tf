@@ -5,6 +5,6 @@ variable "instance_type" {
     default = "m5.large" 
 }
 variable "webservers" {
-    type = list
+    type = set
     default = ["web1","web2","web3"]
 }
