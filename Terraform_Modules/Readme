@@ -1,0 +1,8 @@
+- Any directory containing Terraform configuration files is a module.  
+- If we run terrafrom directory from within this directory, this configuration is also known as the root module, or in other words, every terraform configuration has a root module. 
+- Modules can also call other modules which allows resources configurations to be packaged and reused.
+- The advantages of using modules is that it can easily shared with others. 
+- Why should we use modules?
+- Modules bring in a lot of benefits such as simpler configuration. Instead od having complex configuration files that contain hundreds and thousands of lines a root modules can be very short, easy to understand and manage.
+
+- Using a pre-configuration module that has been tested and validated also decrease the risk of hunman errors resulting in inconsistent environments. And also increase the res-usability of the code.
