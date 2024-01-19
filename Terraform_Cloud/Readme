@@ -1,1 +1,3 @@
 - Terraform cloud is SaaS or a software as a service environment that helps teams use Terraform together. Terraform cloud supports shared state out of the box without having to rely on other remote backends such as S3 buckets, Google Cloud storage bickets etc. 
+
+- Terraform cloud provide a bunch of additional features such as a user interface where you can run the workflow, access controls, secret management, private registry, policy control etc. 
