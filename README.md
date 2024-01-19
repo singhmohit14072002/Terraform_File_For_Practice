@@ -9,3 +9,6 @@
 This is my Notion link where I add MCQ questions from kodekloud If any one have extra questions please add it in this repo in Questions.md file.
 [Terraform MCQ Link](https://www.notion.so/Terraform-Notes-For-Exams-2986983dbcf74572abc2f68210e014c3?pvs=4)
 
+
+![Terraform Image](https://k21academy.com/wp-content/uploads/2020/07/Terraform-02-2.png)
+
