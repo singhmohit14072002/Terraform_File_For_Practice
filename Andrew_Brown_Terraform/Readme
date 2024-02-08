@@ -1,0 +1,4 @@
+### Local-exec 
+- Local-exec allows you to execute local commads after a resource is provisioned.
+
+- The machine that is executing Terraform eg. terraform apply is where the command will execute. 
